@@ -9,6 +9,7 @@ using std::cout;
 // Should run in O(n) time
 Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
     vdata = vector<int>(start, end);
+    int n = vdata.size();
     for (int i = (n/2) - 1; i >= 0; i--) {
 	int check = i;
         while (true) {
@@ -31,9 +32,9 @@ Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
 void Heap::push(int value){
     vdata.push_back(value);
     int check = vdata.size() - 1;
-    while (i != 0) {
+    while (check != 0) {
         if (vdata[(check - 1) / 2] <= vdata[check]) {break;}
-	std::swap(vdata[(check - 1) / 2], vdata[i]);
+	std::swap(vdata[(check - 1) / 2], vdata[check]);
 	check = (check - 1) / 2;
     }
 }
