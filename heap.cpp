@@ -8,7 +8,7 @@ using std::cout;
 // Builds a heap from the range [start, end) using the heapify algorithm
 // Should run in O(n) time
 Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
-    vdata = vector<int>(start, end);
+    vdata = std::vector<int>(start, end);
     int n = vdata.size();
     for (int i = (n/2) - 1; i >= 0; i--) {
 	int check = i;
