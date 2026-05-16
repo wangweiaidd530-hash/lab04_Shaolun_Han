@@ -42,9 +42,12 @@ void Heap::push(int value){
 // (but does not return it), then ensures
 // the heap is correctly arranged
 void Heap::pop(){
+    if (vdata.empty()) {return;}
     vdata[0] = vdata.back();
     vdata.pop_back();
+    if (vdata.empty()) {return;}
     int check = 0;
+    int n = vdata.size();
     while (true) {
         int smallNum = check;
         if (2 * check + 1 < n && vdata[2 * check + 1] < vdata[smallNum]) {
